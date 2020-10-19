@@ -25,6 +25,6 @@ rqueue.push_back(1993);
 // Looping through values
 int value;
 while (rqueue.pop_front(value)) {
-printf("Value[%d]: %d\n", (rqueue.tail() - 1), value);
+    printf("Value[%d]: %d\n", (rqueue.tail() - 1), value);
 }
 ```

@@ -58,8 +58,6 @@ public:
 
   bool is_empty() const { return m_head == m_tail; }
 
-  size_t size() const { return m_tail - m_head; }
-
 private:
   T m_data[CAPACITY];
   size_t m_head;

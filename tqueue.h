@@ -60,6 +60,10 @@ public:
 
   size_t size() const { return m_head - m_tail; }
 
+  size_t head() const { return m_head; }
+
+  size_t tail() const { return m_tail; }
+
 private:
   T m_data[CAPACITY];
   size_t m_head;

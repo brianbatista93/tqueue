@@ -4,8 +4,27 @@
 [![Build Status](https://travis-ci.org/brianbatista93/tqueue.svg?branch=main)](https://travis-ci.org/brianbatista93/tqueue)
 
 
-Simple C++ single header queue implementation
+Simple C++ single header thread-safe queues implementation
 
 ## Usage
 
-Just `#include "tqueue.h"` in your code!
+Just insert `#include "tqueue.h"` in your code and be happy.
+
+## Ring Queue
+
+As the name implies it is a circular queue with a head and tail.
+
+```cpp
+ring_queue<int, 32> rqueue;
+
+// Pushing values
+rqueue.push_back(29);
+rqueue.push_back(7);
+rqueue.push_back(1993);
+
+// Looping through values
+int value;
+while (rqueue.pop_front(value)) {
+printf("Value[%d]: %d\n", (rqueue.tail() - 1), value);
+}
+```

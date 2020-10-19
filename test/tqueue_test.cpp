@@ -43,3 +43,19 @@ UTEST(ring_queue, pop)
   ASSERT_EQ(1993, result);
   ASSERT_TRUE(queue.is_empty());
 }
+
+UTEST(ring_queue, doc)
+{
+  ring_queue<int, 32> rqueue;
+
+  // Pushing values
+  rqueue.push_back(29);
+  rqueue.push_back(7);
+  rqueue.push_back(1993);
+
+  // Looping through values
+  int value;
+  while (rqueue.pop_front(value)) {
+    printf("Value[%d]: %d\n", (rqueue.tail() - 1), value);
+  }
+}

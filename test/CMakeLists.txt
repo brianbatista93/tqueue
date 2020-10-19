@@ -40,5 +40,6 @@ endif()
 add_executable(${PROJECT_NAME} 
     ../tqueue.h
     main.cpp
+    utest.h
     tqueue_test.cpp
 )

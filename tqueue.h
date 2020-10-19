@@ -21,10 +21,10 @@ private:
 }
 
 template<class T, unsigned CAPACITY>
-class tqueue
+class ring_queue
 {
 public:
-  tqueue()
+  ring_queue()
     : m_head(0)
     , m_tail(0)
   {}
@@ -57,6 +57,8 @@ public:
   }
 
   bool is_empty() const { return m_head == m_tail; }
+
+  size_t size() const { return m_head - m_tail; }
 
 private:
   T m_data[CAPACITY];
